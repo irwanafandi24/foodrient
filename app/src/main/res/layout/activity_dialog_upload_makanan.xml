@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame_login"
+    android:gravity="center_horizontal"
+    android:elevation="3dp"
+    android:paddingBottom="20dp"
+    >
+
+    <RelativeLayout
+        android:id="@+id/imageMix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/centang"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ellipse"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/imageMix"
+        android:id="@+id/titleMasakan"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input Masakan Berhasil"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/titleMasakan"
+        android:id="@+id/contentMasakan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Terimakasih sudah menambahkan masakan anda, Semoga Sukses."
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:textColor="@color/grey"
+        />
+
+        <Button
+            android:layout_below="@+id/contentMasakan"
+            android:id="@+id/btnOk"
+            android:layout_width="200dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_login_val"
+            android:layout_marginTop="18dp"
+            />
+
+</RelativeLayout>

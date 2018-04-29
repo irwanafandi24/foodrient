@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/frame_login"
+    android:elevation="3dp"
+
+    >
+
+    <LinearLayout
+        android:id="@+id/headerPopUp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:padding="20dp"
+        >
+
+        <TextView
+            android:id="@+id/Masuk"
+            android:layout_width="0dp"
+            android:layout_weight="5"
+            android:layout_height="wrap_content"
+            android:text="Filter"
+            android:textAlignment="center"
+            android:textSize="23sp"
+            android:paddingLeft="20dp"
+            android:textColor="@color/commandColor"
+            android:textStyle="bold"
+            />
+
+        <TextView
+            android:id="@+id/cancleFilter"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="X"
+            android:textColor="@color/bottom_line"
+            android:fontFamily="sans-serif"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/lineBot"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:alpha=".5"
+        android:layout_below="@+id/headerPopUp"
+        android:background="@color/bottom_line" />
+
+    <LinearLayout
+        android:id="@+id/et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/lineBot"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Harga"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            />
+
+        <EditText
+            android:id="@+id/hargaFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:ems="15"
+            android:background="@android:color/transparent"
+            android:layout_below="@+id/lineBot"
+            android:layout_centerHorizontal="true"
+            android:hint="Rp.12000 - Rp.15000"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:alpha=".5"
+            android:layout_below="@+id/headerPopUp"
+            android:background="@color/bottom_line" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jenis Makanan"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            />
+
+        <EditText
+            android:id="@+id/jenisMasakanFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:ems="15"
+            android:background="@android:color/transparent"
+            android:hint="Semua"
+            android:layout_below="@+id/username"
+            android:layout_centerHorizontal="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:alpha=".5"
+            android:layout_below="@+id/headerPopUp"
+            android:background="@color/bottom_line" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jenis Penyakit"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:layout_marginTop="8dp"
+            />
+
+        <EditText
+            android:id="@+id/jenisPenyakit"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:ems="15"
+            android:background="@android:color/transparent"
+            android:hint="Semua"
+            android:layout_below="@+id/username"
+            android:layout_centerHorizontal="true" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:alpha=".5"
+            android:layout_below="@+id/headerPopUp"
+            android:background="@color/bottom_line" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@id/et"
+        android:layout_width="match_parent"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_marginTop="8dp"
+        android:paddingBottom="20dp"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_weight="0.5"
+            android:id="@+id/btnReset"
+            android:layout_width="0dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_height="50dp"
+            android:text="Reset"
+            android:textColor="#ffffff"
+            android:background="@drawable/btn_login_val"
+            android:layout_marginRight="4dp"
+
+            />
+
+        <Button
+            android:layout_weight="0.5"
+            android:id="@+id/btnFilter"
+            android:layout_width="0dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_height="50dp"
+            android:text="Filter"
+            android:textColor="#ffffff"
+            android:layout_marginLeft="4dp"
+            android:background="@drawable/btn_login_val"
+             />
+
+    </LinearLayout>
+
+</RelativeLayout>

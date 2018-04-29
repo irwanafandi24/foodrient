@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/btmNavHome"
+        android:icon="@drawable/ic_home_foody"
+        android:title="Home"
+        android:iconTint="#435073">
+
+    </item>
+
+    <item
+        android:id="@+id/btmNavMap"
+        android:icon="@drawable/ic_map_foody"
+        android:title="Map"
+        android:iconTint="#435073">
+    </item>
+
+    <item
+        android:id="@+id/btmNavResep"
+        android:icon="@drawable/ic_resep_foody"
+        android:title="Info Bahan"
+        android:iconTint="#435073">
+    </item>
+
+    <item
+        android:id="@+id/btmNavProfile"
+        android:icon="@drawable/ic_profile_foody"
+        android:title="Profil"
+        android:iconTint="#435073">
+    </item>
+</menu>

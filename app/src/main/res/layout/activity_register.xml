@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.miafandi.foody.RegisterActivity">
+
+    <LinearLayout
+        android:id="@+id/daftarDiri"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true">
+        <TextView
+            android:id="@+id/dataDiri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Diri"
+            android:textColor="@color/greyFont"
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/no_ktp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nomer KTP"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/grey"
+            android:textSize="13sp"/>
+        <EditText
+            android:id="@+id/etNoKTP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:inputType="number"
+            android:hint="input nomer KTP"/>
+        <TextView
+            android:id="@+id/nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/grey"
+            android:textSize="13sp"/>
+        <EditText
+            android:id="@+id/etNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:hint="input nama"/>
+        <TextView
+            android:id="@+id/Alamat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alamat"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/grey"
+            android:textSize="13sp"/>
+        <EditText
+            android:id="@+id/etAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:hint="input alamat"/>
+        <TextView
+            android:id="@+id/telpon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nomor Telepon"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/grey"
+            android:textSize="13sp"/>
+        <EditText
+            android:id="@+id/etTelepon"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:hint="input nomor telpon"/>
+
+        <!-- bagian bawah -->
+        <TextView
+            android:id="@+id/dataAkun"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Akun"
+            android:textColor="@color/greyFont"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/grey"
+            android:textSize="13sp"/>
+        <EditText
+            android:id="@+id/etEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:textSize="12dp"
+            android:hint="input email"/>
+
+        <TextView
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/grey"
+            android:textSize="13sp"/>
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textSize="12dp"
+            android:hint="input password"/>
+
+        <TextView
+            android:id="@+id/repassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Retype Password"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/grey"
+            android:textSize="13sp"/>
+        <EditText
+            android:id="@+id/etRePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:textSize="12dp"
+            android:hint="retype password"/>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/white"
+            android:text="Daftar"
+            android:background="@drawable/btn_daftar"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

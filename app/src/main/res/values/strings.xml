@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Foodrient</string>
+    <string name="ss_next">NEXT</string>
+    <string name="ss_skip">SKIP</string>
+    <string name="sc1_top">Mau coba bikin usaha kuliner tanpa resiko besar?</string>
+    <string name="sc1_bot">Kamu bisa mulai disini</string>
+    <string name="sc2_top">Kangen Masakan Rumah?</string>
+    <string name="sc2_bot">Kamu dapat menemukannya di Foody</string>
+    <string name="sc3_top">Request Masakan Kesukaan</string>
+    <string name="sc3_bot">Fitur ini memfasilitasi kamu untuk request masakan</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="conten_langkah">1. Tumis bumbu halus hingga harum, masukan sereh lengkuas daun jeruk daun salam \n
+2. Tambahkan setengah gelas air,aduk tunggu mendidih \n
+3. Masukan ikan, siram2 dg air bumbu(jangan terlalu keras mengaduk krn ikan tenggiri mudah hancur) \n
+4. Masukan sisa air,tambahkan gula garam dan penyedap,tutup,tunggu hingga mendidih \n
+5. Masukan potongan tomat,cek rasa \n
+6. Brekecek ini bisa berkuah atau disat(bhs jawa 😅) sesuai seleraa \n</string>
+
+    <string name="content_bahan">3 ekor ikan tenggiri ukuran sedang \n
+Secukupnya daun kemangi (sy skip krn gk ada) \n
+1 ruas lengkuas geprek \n
+1 batang sereh geprek \n
+2 lembar daun salam \n
+1 lembar daun jeruk \n
+1 buah tomat potong \n \n
+
+Bumbu halus: \n
+15 cabe rawit merah \n
+3 siung bawang putih \n
+2 butir bawang merah \n
+1 cm jahe \n
+1 cm kunyit \n
+Secukupnya garam gula dan penyedap(jika suka) \n
+Secukupnya minyak goreng \n
+2 gelas air \n</string>
+</resources>

@@ -1,0 +1,334 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.example.miafandi.foody.Profil.ProfileFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/mainToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/commandColor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:id="@+id/imgProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:src="@drawable/ic_profile"
+                />
+
+            <LinearLayout
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtUsername"
+                    android:text="Diah Ajeng Dwi Yuniasih"
+                    android:layout_marginLeft="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtEditProfile"
+                    android:text="Edit Profile"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="5pt"
+                    android:layout_below="@id/txtEditProfile"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingRight="16dp"
+        android:paddingLeft="16dp"
+        android:paddingBottom="12dp"
+        android:paddingTop="12dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pemasukan"
+            android:textColor="@color/grey"
+            android:id="@+id/txtSemangat"
+            />
+        
+        <TextView
+            android:id="@+id/txtUang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rp. 0"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_below="@id/txtSemangat"
+            />
+
+        <Button
+            android:id="@+id/btnDetil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Detil"
+            android:textStyle="bold"
+            android:textColor="@color/commandColor"
+            android:background="@drawable/borderbackground"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/gold_soft"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status Lapak"
+            android:textColor="@color/goldDark"
+            android:id="@+id/profle"
+            android:layout_centerVertical="true"
+            />
+
+        <Button
+            android:id="@+id/btnReguler"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="REGULER"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:background="@color/gold"
+            android:layout_toRightOf="@id/profle"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            />
+
+        <Button
+            android:id="@+id/btnUpgrade"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@color/commandColor"
+            android:text="Upgrade"
+            android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <Button
+            android:id="@+id/btnJualMasakan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jual Masakan"
+            android:background="@drawable/btn_daftar"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:id="@+id/btnJualCatering"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jual Cathering"
+            android:background="@drawable/btn_login"
+            android:textColor="@color/grey"
+            />
+
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/message"
+                />
+
+            <TextView
+                android:id="@+id/txtPesan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pesan"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/lonceng"
+                />
+
+            <TextView
+                android:id="@+id/txtNotifikasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Notifikasi"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/pelanggan"
+                />
+
+            <TextView
+                android:id="@+id/txtPelanggan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar Pelanggan"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/jempol"
+                />
+
+            <TextView
+                android:id="@+id/txtFeedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Feedback"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/bc"
+                />
+
+            <TextView
+                android:id="@+id/txtPromosi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Promosi"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/setting"
+                />
+
+            <TextView
+                android:id="@+id/txtAkun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pengaturan Akun"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:id="@+id/txtMenuLain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu Lain"
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorPrimaryDark"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
