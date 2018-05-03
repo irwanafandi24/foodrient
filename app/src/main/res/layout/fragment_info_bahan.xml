@@ -2,17 +2,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.miafandi.foody.Resep.InfoBahan">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
         <LinearLayout
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="12dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -25,7 +22,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/searchView"
                     android:layout_marginTop="10dp"
-                    android:layout_weight="0.4"
+                    android:layout_weight="0.3"
                     android:text="Pencarian Terkini :" />
 
                 <TextView
@@ -68,75 +65,13 @@
                     android:textColor="@color/white" />
             </LinearLayout>
 
-            <LinearLayout
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycleBahan"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleX="1.8"
-                    android:src="@drawable/bawangmerah" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bawang Merah"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bawang merah (Allium cepa var ascalonicum (L) Back) merupakan sejenis tanaman yang menjadi bumbu berbagai masakan di dunia, berasal dari Iran, Pakistan."
-                    android:textSize="6pt" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/greyPudar">
-
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleX="1.5"
-                    android:src="@drawable/brokoli" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Brokoli"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Brokoli merupakan salah satu sayuran hijau dari keluarga tanaman kubis. Brokoli berasal dari Italia dan dikenal sejak abad ke-enam. Hingga saat ini, brokoli terkenal sebagai sumber makanan yang paling sehat karena mengandung berbagai macam nutrisi
-            "
-                    android:textSize="6pt" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/greyPudar">
-
-                </LinearLayout>
-            </LinearLayout>
+                >
+            </android.support.v7.widget.RecyclerView>
 
         </LinearLayout>
-    </ScrollView>
-
 </RelativeLayout>
