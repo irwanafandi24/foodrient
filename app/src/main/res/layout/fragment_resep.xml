@@ -5,166 +5,50 @@
     android:layout_height="match_parent"
     tools:context="com.example.miafandi.foody.Resep.ResepFragment">
 
-    <ScrollView
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabInfoBahan"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/toolBar"
-        >
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:tabGravity="center"
+        app:tabTextColor="@color/white"
+        android:textDirection="locale"
+        android:paddingBottom="30dp"
+        />
 
-        <LinearLayout
-            android:id="@+id/linearLayout3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="20dp"
-            android:orientation="vertical">
-
-            <SearchView
-                android:id="@+id/searchView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:queryHint="apa yang anda cari"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/searchView"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="0.4"
-                    android:text="Pencarian Terkini :" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/searchView"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="0.2"
-                    android:background="@drawable/btn_daftar"
-                    android:padding="4dp"
-                    android:text="Bawang Putih"
-                    android:textAlignment="center"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/searchView"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="0.2"
-                    android:background="@drawable/btn_daftar"
-                    android:padding="4dp"
-                    android:text="Bawang Merah"
-                    android:textAlignment="center"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/searchView"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="0.2"
-                    android:background="@drawable/btn_daftar"
-                    android:padding="4dp"
-                    android:text="Nasi Merah"
-                    android:textAlignment="center"
-                    android:textColor="@color/white" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleX="1.8"
-                    android:src="@drawable/bawangmerah" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bawang Merah"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Bawang merah (Allium cepa var ascalonicum (L) Back) merupakan sejenis tanaman yang menjadi bumbu berbagai masakan di dunia, berasal dari Iran, Pakistan."
-                    android:textSize="6pt" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/greyPudar">
-
-                </LinearLayout>
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleX="1.5"
-                    android:src="@drawable/brokoli" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Brokoli"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Brokoli merupakan salah satu sayuran hijau dari keluarga tanaman kubis. Brokoli berasal dari Italia dan dikenal sejak abad ke-enam. Hingga saat ini, brokoli terkenal sebagai sumber makanan yang paling sehat karena mengandung berbagai macam nutrisi
-            "
-                    android:textSize="6pt" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/greyPudar">
-
-                </LinearLayout>
-            </LinearLayout>
-
-        </LinearLayout>
-    </ScrollView>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pagerInfoBahan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tabInfoBahan"
+        android:animationCache="true"
+        android:background="@color/white"
+        android:defaultFocusHighlightEnabled="true"
+        android:filterTouchesWhenObscured="true"
+        android:padding="8dp" />
 
     <RelativeLayout
-        android:id="@+id/toolBar"
+        android:layout_marginTop="50dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/RSearch"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/btn_login"
+        >
 
-        <android.support.design.widget.AppBarLayout
-            android:id="@+id/topToolbarResep"
+        <SearchView
+            android:id="@+id/searchBahan"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:theme="@style/AppThemeDefault">
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbarResep"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:popupTheme="@style/AppTheme.PopupOverly" />
-
-        </android.support.design.widget.AppBarLayout>
+            android:layout_height="40dp"
+            android:layout_margin="6dp"
+            android:animationCache="true"
+            android:background="@color/white"
+            android:focusedByDefault="true"
+            android:inputType="text"
+            android:queryBackground="@android:color/transparent"
+            android:queryHint="apa yang anda cari" />
 
     </RelativeLayout>
 

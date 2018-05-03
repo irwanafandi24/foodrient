@@ -2,7 +2,9 @@ package com.example.miafandi.foody.Resep;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,21 +19,23 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.miafandi.foody.Adapter.ViewPagerAdapterBahan;
+import com.example.miafandi.foody.Adapter.ViewPagerAdapterTransaksi;
 import com.example.miafandi.foody.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ResepFragment extends Fragment {
-    Toolbar toolbarResep;
-    SearchView searchView;
-    RecyclerView listshowrcy;
-    MenuItem menuItem;
+
     List<Item>produckList = new ArrayList<>();
     int white = Color.parseColor("#ffffff");
     int grey = Color.parseColor("#bfbfbf");
 
-    ResepAdapter adapter;
+    private TabLayout tabLayout;
+    private ViewPager viewPager;
+    private ViewPagerAdapterBahan pagerAdapter;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +46,47 @@ public class ResepFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_resep, container, false);
 
-        //---Toolbar
-        toolbarResep = (Toolbar) rootView.findViewById(R.id.toolbarResep);
-        toolbarResep.setTitle("Info Bahan");
-        toolbarResep.setTitleTextColor(white);
-        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbarResep);
-       // ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        tabLayout = (TabLayout) rootView.findViewById(R.id.tabInfoBahan);
+        tabLayout.addTab(tabLayout.newTab().setText("Bahan Masakan"),0,true);
+        tabLayout.addTab(tabLayout.newTab().setText("Buah Buahan"),1,false);
+
+        viewPager = (ViewPager) rootView.findViewById(R.id.pagerInfoBahan);
+        pagerAdapter= new ViewPagerAdapterBahan(this.getActivity().getSupportFragmentManager(), tabLayout.getTabCount());
+        viewPager.setOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+        viewPager.setAdapter(pagerAdapter);
+
+        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                viewPager.setCurrentItem(tab.getPosition());
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+//                tabLayout.setTabTextColors();
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
         setHasOptionsMenu(true);
+
+        isiList();
+        //--recycleView
+//        listshowrcy=(RecyclerView) rootView.findViewById(R.id.recycleResep);
+//        listshowrcy.setHasFixedSize(true);
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity());
+//        listshowrcy.setLayoutManager(linearLayoutManager);
+//        adapter = new ResepAdapter(produckList,this.getActivity());//this.getActivity diisi kelasnya
+//        listshowrcy.setAdapter(adapter);
+
+        return rootView;
+    }
+
+    public void isiList(){
         //adding reseplist
         produckList.add(new Item("Soto Gule Sapi","Surabaya","Masakan yang sangat nikmat dan lezat khas Jawa Timur, resep sederhana",R.drawable.grid1));
         produckList.add(new Item("Semur Jengkol","Banyuwangi","Masakan yang sangat nikmat dan lezat khas Jawa Timur, resep sederhana",R.drawable.grid2));
@@ -63,19 +101,7 @@ public class ResepFragment extends Fragment {
         produckList.add(new Item("Mie Melenial","Bandung","Masakan yang sangat nikmat dan lezat khas Jawa Timur, resep sederhana",R.drawable.grid5));
         produckList.add(new Item("Ikan Ungkap Manis","Pulau Mas","Masakan yang sangat nikmat dan lezat khas Jawa Timur, resep sederhana",R.drawable.grid6));
 
-
-        //--recycleView
-//        listshowrcy=(RecyclerView) rootView.findViewById(R.id.recycleResep);
-//        listshowrcy.setHasFixedSize(true);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this.getActivity());
-//        listshowrcy.setLayoutManager(linearLayoutManager);
-//        adapter = new ResepAdapter(produckList,this.getActivity());//this.getActivity diisi kelasnya
-//        listshowrcy.setAdapter(adapter);
-
-        return rootView;
     }
-
-
 
 //    @Override
 //    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
