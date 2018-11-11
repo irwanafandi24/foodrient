@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.miafandi.foody.PanduanActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="8dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Buku Panduan Ber isikan :
+        1. Alur Pendaftaran Dan Seleksi Calon Pemasak
+        2. Cara melakukan Upload / Jual makanan
+        3. Aturan dalam Penmbagian Hasil
+        4. Syarat pendaftaran dan Fee untuk ambasador
+        5. Cara Pendaftaran Ambasador"
+                />
+
+            <View
+                android:id="@+id/lineBot"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_marginTop="5dp"
+                android:alpha=".5"
+                android:background="@color/bottom_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:text="1. Alur pendaftaran dan seleksi ibu ibu :
+	a. isi form pendaftaran di aplikasi ( lengkapi data dengan benar )
+	b. melakukan request daftar sebagai pemasak di menu akun
+	c. sistem akan menginformasikan melalui email / nomor telphone \n \t \t tentang camp pelatihan
+	d. pada camp pelatihan user akan diberikan penilaian pada saat \n \t \t proses memaska waktu didalam klan
+	e. setelah camp pelatihan selesai dan lulus
+	f. akan ada tes di akhir berupa tes kebersihan tempat memasak \n \t \t dll.
+	g. setelah itu akan ada pengumuman melalui email/telp kepada \n \t \t calon penjual berupa kode aktifasi lapak
+	h. pennjual melakukan pembelian voucher diawal sebanyak \n \t \t 50.000"
+                />
+
+            <View
+                android:id="@+id/lineBot3"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_marginTop="5dp"
+                android:alpha=".5"
+                android:background="@color/bottom_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:text="2. Cara melakukan Upload / Jual makanan :
+	a. Isi voucher terlebih dahulu jika ingin melakukan transaksi
+	b. Jika voucher sudah terisi sebanyak > 5.000 maka baru bisa \n\t\t jualan pada hari itu dan selanjutnya,
+	   \n\t\t jika dibawah 5.000 dan tidak isi ulang pada hari itu juga, maka \n\t\t untuk hari selanjutnya, tidak bisa buka toko sementara.
+	c. Ibu menyiapkan masakan, berdasarkan sumber informasi \n\t\t  kandungan bahan masakan
+	d. Ibu mengupload masakan beserta atribut atributny ( nama \n\t\t  masakan, harga, jumlah tersedia, komposisi tidak perlu semua, \n\t\t  minimal 4 bahan, bagus untuk penyakit max 3)"
+                />
+
+            <View
+                android:id="@+id/lineBot6"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_marginTop="5dp"
+                android:alpha=".5"
+                android:background="@color/bottom_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:text="3. Aturan dalam Penmbagian Hasil :
+    a. Setiap jumlah transaksi yang sudah melewati total harga yang \n\t\t dijual, yakni senilai ( 10.000 ), maka voucher akan dipotong \n\t\t sebanyak 500 rupiah
+    b. Ibu ibu mengisi sendiri ketersediaannya melakukan pengantaran \n\t\t dan menetukan harga untuk pengantaran, atau jika mau menggunakan \n\t\t gojek, atau ambil sendiri."
+                />
+
+            <View
+                android:id="@+id/lineBot7"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_marginTop="5dp"
+                android:alpha=".5"
+                android:background="@color/bottom_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:text="4. Syarat pendaftaran dan Fee untuk ambasador :
+            1. ambasador bisa merupakan mahasiswa ahli gizi / baik sudah lulus, maupun belum, minimal semester 4
+            2. mendapatkan surat rekomendasi dari kampus ( ragu )
+            3. Transkrip nilai mahasiswa yang paling baru
+            4. Memiliki kendaraan dan bisa berkendara
+            5. Bersedia menandatangani surat perjanjian kontrak kerja dimana selama 6 bulan bekerja, seteleh itu boleh memutuskan keluar atau lanjut di 6 bulang berikutnya
+            6. Fee untuk Ambasadro dalam 1 bulan adalah Rp.300,000 dengan pekerjaan melakukan pengecekan pada 5 pemeasak, yang sudah ditentukan"
+                />
+
+            <View
+                android:id="@+id/lineBot8"
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:layout_marginTop="5dp"
+                android:alpha=".5"
+                android:background="@color/bottom_line" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="10dp"
+                android:text="5. Cara Pendaftaran Ambasador :
+            1. bisa mengirimkan berkas melalui email
+            2. dilakukan tes tulis, pengumuman hasil tes lewat email
+            3. melakukan tanda tangan surat perjanjian kontrak ambasador jika sudah diterima
+            4. siap ditugaskan"
+                />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

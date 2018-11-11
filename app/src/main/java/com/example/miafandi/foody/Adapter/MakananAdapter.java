@@ -75,6 +75,7 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.MyViewHo
             intent.putExtra("nama",txtNamaMakanan.getText().toString());
             intent.putExtra("gambar",contentTemp.getDrawable());
             intent.putExtra("bintang",contentTemp.getBintang());
+            intent.putExtra("harga",contentTemp.getHarga());
 
             context.startActivity(intent);
         }

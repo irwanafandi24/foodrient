@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="16dp"
-    tools:context="com.example.miafandi.foody.Resep.DetailResepActivity">
+    tools:context="com.example.miafandi.foody.Bahan.DetailResepActivity">
 
     <ImageView
         android:id="@+id/imageDetail"

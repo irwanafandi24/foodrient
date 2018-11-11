@@ -13,79 +13,88 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="10dp"
+        android:background="@drawable/bggj"
         >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="40dp"
+            >
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:text="Makan Enak"/>
 
-    <ImageView
-       android:id="@+id/logo_foody"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_alignParentTop="true"
-       android:layout_marginTop="25dp"
-       app:srcCompat="@drawable/login_log" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:text="dan Sehat"/>
 
-    <TextView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:text="Healthy life"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        android:text="become easier"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="42sp"
+                android:textStyle="bold"
+                android:text="Tak Perlu Repot"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical"
+            android:gravity="center_horizontal|center_vertical"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/white"
+            >
+            <Button
+                android:id="@+id/btnDaftar"
+                android:layout_width="300dp"
+                android:height="60dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Daftar Akun."
+                android:textColor="#ffffff"
+                android:background="@drawable/btn_daftar"
+                android:elevation="15dp"
+                />
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="300dp"
+                android:height="60dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"
+                android:text="Sudah Punya Akun? Masuk"
+                android:textColor="@color/commandColor"
+                android:layout_marginTop="25px"
+                android:background="@drawable/btn_login"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_below="@+id/layoutDots"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:background="@drawable/login_background"
-        android:layout_marginTop="65dp"
-        android:layout_marginBottom="10dp"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_centerVertical="true"
-        >
-
-        <Button
-            android:id="@+id/btnDaftar"
-            android:layout_width="300dp"
-            android:height="60dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="Daftar Akun."
-            android:textColor="#ffffff"
-            android:background="@drawable/btn_daftar"
-            android:elevation="15dp"
-            />
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="300dp"
-            android:height="60dp"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:layout_height="wrap_content"
-            android:text="Sudah Punya Akun? Masuk"
-            android:textColor="@color/commandColor"
-            android:layout_marginTop="25px"
-            android:background="@drawable/btn_login"
-            android:elevation="15dp"
-            />
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+
         android:layout_alignParentBottom="true"
         android:gravity="center">
 
@@ -102,36 +111,36 @@
             android:text="peraturan layanan dan kebijakan privasi"/>
 
 
-    <View
-        android:id="@+id/lineBot"
-        android:layout_width="match_parent"
-        android:layout_height="1.5dp"
-        android:layout_marginTop="10dp"
-        android:alpha=".5"
-        android:background="@color/bottom_line" />
+        <View
+            android:id="@+id/lineBot"
+            android:layout_width="match_parent"
+            android:layout_height="1.5dp"
+            android:layout_marginTop="10dp"
+            android:alpha=".5"
+            android:background="@color/bottom_line" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="foodrient @ Handicrated by"
-            android:textColor="#D3D3D3"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="Moin"
-            android:textColor="#6C7993"
-            android:layout_marginLeft="10dp"
-            android:textStyle="bold"/>
-    </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="foodrient @ Handicrated by"
+                android:textColor="#D3D3D3"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Ilmy"
+                android:textColor="@color/colorPrimary"
+                android:layout_marginLeft="10dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
     </LinearLayout>
 
 </RelativeLayout>

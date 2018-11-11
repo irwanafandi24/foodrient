@@ -30,7 +30,6 @@ public class TransaksiActivity extends AppCompatActivity {
 
         tabLayout = (TabLayout) findViewById(R.id.tabTransaksi);
         tabLayout.addTab(tabLayout.newTab().setText("Masakan Hari Ini"),0,true);
-        tabLayout.addTab(tabLayout.newTab().setText("Voting Masakan"),1,false);
 
         viewPager = (ViewPager) findViewById(R.id.pagerTransaksi);
         pagerAdapter= new ViewPagerAdapterTransaksi(this.getSupportFragmentManager(), tabLayout.getTabCount());

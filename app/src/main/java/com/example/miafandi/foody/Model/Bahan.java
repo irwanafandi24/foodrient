@@ -25,8 +25,8 @@ public class Bahan {
         this.nama = nama;
     }
 
-    public String[] getPenyakit() {
-        return penyakit;
+    public String getPenyakit(int i) {
+        return penyakit[i];
     }
 
     public void setPenyakit(String[] penyakit) {

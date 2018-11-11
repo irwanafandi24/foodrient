@@ -12,7 +12,7 @@
         android:layout_marginBottom="60dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="@drawable/sc_tigas">
+        android:background="@drawable/g3">
 
     </RelativeLayout>
 

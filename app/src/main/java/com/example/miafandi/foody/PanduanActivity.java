@@ -1,0 +1,13 @@
+package com.example.miafandi.foody;
+
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class PanduanActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_panduan);
+    }
+}

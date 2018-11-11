@@ -1,4 +1,4 @@
-package com.example.miafandi.foody.Resep;
+package com.example.miafandi.foody.Bahan;
 
 /**
  * Created by MIAfandi on 01/02/2018.

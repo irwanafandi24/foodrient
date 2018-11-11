@@ -45,7 +45,7 @@
                         android:id="@+id/detailFoodJarak"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Informasi Komposisi Bahan : \n \t Mengandung Vitamin A, D, Asam Folat, Kalsium dan Mineral"
+                        android:text="Informasi Komposisi Bahan : \nMengandung Vitamin A, D, Asam Folat, Kalsium dan Mineral"
                         android:textSize="10dp"
                         android:textColor="@color/colorFont"/>
                 </LinearLayout>
@@ -292,6 +292,47 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/tlp"
+            android:layout_below="@id/cardthree"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            card_view:cardElevation="2dp"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="6dp"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kontak"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="082214119368"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    />
+
+            </LinearLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:id="@+id/lastCard"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -299,7 +340,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginBottom="10dp"
             card_view:cardElevation="2dp"
-            android:layout_below="@+id/cardthree">
+            android:layout_below="@+id/tlp">
 
             <LinearLayout
                 android:id="@+id/total"

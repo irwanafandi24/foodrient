@@ -5,12 +5,14 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.miafandi.foody.R;
 
 public class detailFoodItem extends AppCompatActivity {
@@ -44,15 +46,29 @@ public class detailFoodItem extends AppCompatActivity {
 
         final Intent i = getIntent();
         final String nama = i.getStringExtra("nama");
+
         final int gambar = i.getIntExtra("gambar",0);
+        final String gambar1 = i.getStringExtra("gambar");
+
         final int bintang = i.getIntExtra("bintang",0);
         detailFoodNama.setText(nama);
-        imageDetailFood.setImageResource(gambar);
+
+        if(gambar ==0 ){
+            Log.e("masuk",gambar1);
+            Glide.with(this)
+                    .load(gambar1)
+                    .placeholder(R.drawable.iklan)
+                    .into(imageDetailFood);
+        }else{
+            imageDetailFood.setImageResource(gambar);
+        }
+
 
         add = (TextView) findViewById(R.id.increment);
         count = (TextView) findViewById(R.id.count);
         minus = (TextView) findViewById(R.id.decrement);
         button = (Button) findViewById(R.id.btnPesan);
+        pesanHarga.setText(i.getStringExtra("harga"));
 
         hargaAsli = Integer.parseInt(pesanHarga.getText().toString());
         kirim = Integer.parseInt(pesanKirim.getText().toString());

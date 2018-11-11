@@ -6,6 +6,20 @@
     android:orientation="vertical"
     tools:context="com.example.miafandi.foody.Profil.ProfileFragment">
 
+
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
     <!-- TODO: Update blank fragment layout -->
 
     <android.support.v7.widget.Toolbar
@@ -129,14 +143,29 @@
             android:id="@+id/btnReguler"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="REGULER"
+            android:text="TIDAK AKTIF"
             android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:textColor="@color/colorPrimaryDark"
-            android:background="@color/gold"
+            android:background="@android:color/transparent"
             android:layout_toRightOf="@id/profle"
             android:layout_centerHorizontal="true"
             android:layout_marginLeft="10dp"
             />
+
+        <TextView
+            android:id="@+id/txtVoucher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="AKTIF"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimaryDark"
+            android:layout_toRightOf="@id/profle"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            />
+
 
         <Button
             android:id="@+id/btnUpgrade"
@@ -144,8 +173,20 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:background="@color/commandColor"
-            android:text="Upgrade"
+            android:text="Aktifkan"
             android:textColor="@color/white"
+            android:layout_alignParentRight="true"
+            />
+
+        <Button
+            android:id="@+id/btnBayar"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:background="@color/commandColor"
+            android:text="BAYAR"
+            android:textColor="@color/white"
+            android:visibility="invisible"
             android:layout_alignParentRight="true"
             />
 
@@ -167,18 +208,8 @@
             android:text="Jual Masakan"
             android:background="@drawable/btn_daftar"
             android:textColor="@color/white"
+            android:visibility="invisible"
             />
-
-        <Button
-            android:id="@+id/btnJualCatering"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Jual Cathering"
-            android:background="@drawable/btn_login"
-            android:textColor="@color/grey"
-            />
-
 
         <LinearLayout
             android:layout_marginTop="20dp"
@@ -302,33 +333,34 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/setting"
                 />
-
             <TextView
                 android:id="@+id/txtAkun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Pengaturan Akun"
-                android:layout_marginLeft="15dp"
-                android:textColor="@color/colorPrimaryDark"
-                />
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/colorPrimaryDark" />
         </LinearLayout>
         <LinearLayout
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:paddingBottom="10dp"
             >
             <TextView
                 android:id="@+id/txtMenuLain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Menu Lain"
-                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:visibility="visible"
                 android:textColor="@color/colorPrimaryDark"
                 />
         </LinearLayout>
 
     </LinearLayout>
 
-
+    </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>

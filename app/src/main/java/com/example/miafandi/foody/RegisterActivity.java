@@ -2,13 +2,16 @@ package com.example.miafandi.foody;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +22,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.example.miafandi.foody.AppConfig.DatabaseConfig;
 import com.example.miafandi.foody.AppConfig.RequestHandler;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -28,11 +35,13 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RegisterActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener{
     Button register;
     TextView verifikasi_masuk, verifikasi_hubungi;
     EditText etNoKtp, etNama, etAlamat, etNoTelp, etEmail, etPassword, etPassword2;
     ProgressDialog progressDialog;
+
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +51,13 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        progressDialog = new ProgressDialog(this);
+        //firebase
+        firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() != null){
+            finish();
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
         progressDialog = new ProgressDialog(RegisterActivity.this);
 
         etNoKtp = (EditText) findViewById(R.id.etNoKTP);
@@ -53,20 +69,7 @@ public class RegisterActivity extends AppCompatActivity {
         etPassword2 = (EditText) findViewById(R.id.etRePassword);
 
         register = (Button) findViewById(R.id.btnRegister);
-
-        register.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Register(etNoKtp.getText().toString(),
-                        etNama.getText().toString(),
-                        etAlamat.getText().toString(),
-                        etNoTelp.getText().toString(),
-                        etEmail.getText().toString(),
-                        etPassword.getText().toString(),
-                        etPassword2.getText().toString());
-
-            }
-        });
+        register.setOnClickListener(this);
     }
 
     @Override
@@ -79,78 +82,42 @@ public class RegisterActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    private void registerUser(){
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
 
-    public void Register(final String noktp, final String nama, final String alamat, final String notelp, final String email, final String pass, String ppass2){
-        if(noktp.equals("")){
-            etNoKtp.setError("No Ktp Wajib Diisi");
-        }else if(nama.equals("")){
-            etNama.setError("No Ktp Wajib Diisi");
-        }else if(notelp.equals("")){
-            etNoTelp.setError("Nomor Telphone Wajib Diisi");
-        }else if(email.equals("")){
-            etEmail.setError("Email Wajib Diisi");
-        }else if(pass.equals("")){
-            etPassword.setError("Password Harus Benar");
-        }else{
-            progressDialog.setMessage("Tunggu Proses Pendaftarana");
-            progressDialog.show();
-            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                            startActivity(intent);
-
-//            StringRequest stringRequest = new StringRequest(Request.Method.POST,
-//                    DatabaseConfig.REGISTER_USER, new Response.Listener<String>() {
-//                @Override
-//                public void onResponse(String response) {
-//                    progressDialog.dismiss();
-//
-//                    AlertDialog.Builder mBuilder = new AlertDialog.Builder(RegisterActivity.this);
-//                    View mView = getLayoutInflater().inflate(R.layout.activity_dialog_daftar, null);
-//
-//                    verifikasi_masuk = (TextView)mView.findViewById(R.id.verifikasi_login);
-//                    verifikasi_hubungi = (TextView)mView.findViewById(R.id.verifikasi_hubungi);
-//
-//                    mBuilder.setView(mView);
-//                    final AlertDialog dialog = mBuilder.create();
-//                    dialog.show();
-//
-//                    verifikasi_masuk.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-//                            startActivity(intent);
-//                        }
-//                    });
-//
-//                    verifikasi_hubungi.setOnClickListener(new View.OnClickListener() {
-//                        @Override
-//                        public void onClick(View v) {
-//                            Toast.makeText(RegisterActivity.this,"send message to email",Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//
-//                }
-//            }, new Response.ErrorListener() {
-//                @Override
-//                public void onErrorResponse(VolleyError error) {
-//                    progressDialog.dismiss();
-//                    Toast.makeText(RegisterActivity.this,error.getMessage(),Toast.LENGTH_SHORT).show();
-//                }
-//            }){
-//                @Override
-//                protected Map<String, String> getParams() throws AuthFailureError {
-//                    Map<String,String> params = new HashMap<>();
-//                    params.put("ktp",noktp);
-//                    params.put("password",pass);
-//                    params.put("email",email);
-//                    params.put("nama",nama);
-//                    params.put("alamat",alamat);
-//                    params.put("no_tlp",notelp);
-//
-//                    return params;
-//                }
-//            };
-//            RequestHandler.getInstance(this).addToRequestQueue(stringRequest);
+        if(TextUtils.isEmpty(email)){
+            Toast.makeText(this, "Please fill email", Toast.LENGTH_LONG).show();
+            return;
         }
+        if(TextUtils.isEmpty(password)){
+            Toast.makeText(this, "Please fill password", Toast.LENGTH_LONG).show();
+            return;
+        }
+        progressDialog.setMessage("Register User....");
+        progressDialog.show();
 
+        firebaseAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    finish();
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                    Toast.makeText(RegisterActivity.this,"Register success",Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(RegisterActivity.this,"Register Filed, try again",Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+    }
+
+
+
+    @Override
+    public void onClick(View v) {
+        if (v == register){
+            registerUser();
+        }
     }
 }

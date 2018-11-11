@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.miafandi.foody.Resep.InfoBahan">
+    tools:context="com.example.miafandi.foody.Bahan.InfoBahan">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,60 +12,42 @@
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleX="2.6"
+                    android:scaleY="1.5"
+                    android:src="@drawable/bah1" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/searchView"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="0.4"
-                    android:text="Pencarian Terkini :" />
+                    android:text="Mahkota Dewa"
+                    android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/searchView"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="0.2"
-                    android:background="@drawable/btn_daftar"
-                    android:padding="4dp"
-                    android:text="Bawang Putih"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:textColor="@color/white" />
+                    android:text="Mahkota dewa memiliki kandungan zat polifenol, flavonoid, alkaloid, dan saponin yang masing-masing memiliki manfaat untuk kesehatan. Penyakit-penyakit yang bisa disembuhkan dengan buah ini di antaranya adalah diabetes melitus, kanker atau tumor, disentri, gatal-gatal, dan asam urat serta rematik."
+                    android:textSize="6pt" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/searchView"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="0.2"
-                    android:background="@drawable/btn_daftar"
-                    android:padding="4dp"
-                    android:text="Bawang Merah"
-                    android:textAlignment="center"
-                    android:textSize="12sp"
-                    android:textColor="@color/white" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/greyPudar">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/searchView"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="0.2"
-                    android:textSize="12sp"
-                    android:background="@drawable/btn_daftar"
-                    android:padding="4dp"
-                    android:text="Nasi Merah"
-                    android:textAlignment="center"
-                    android:textColor="@color/white" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -77,19 +59,56 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:scaleX="1.8"
-                    android:src="@drawable/bawangmerah" />
+                    android:scaleX="2.6"
+                    android:scaleY="1.5"
+                    android:src="@drawable/bah4" />
 
                 <TextView
+                    android:layout_marginTop="30dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bawang Merah"
+                    android:text="Pepaya"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Bawang merah (Allium cepa var ascalonicum (L) Back) merupakan sejenis tanaman yang menjadi bumbu berbagai masakan di dunia, berasal dari Iran, Pakistan."
+                    android:text="Buah dengan rasa enak dan manis ini ternyata selain mengandung banyak vitamin A juga mampu menyembuhkan beberapa jenis penyakit seperti gangguan saluran pencernaan, kelebihan berat badan, demam berdarah, penyakit jantung, dll. Menurut para ahli sangat dianjurkan mengkonsumsi buah ini secara rutin."
+                    android:textSize="6pt" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@color/greyPudar">
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleX="2.6"
+                    android:scaleY="1.5"
+                    android:src="@drawable/bah2" />
+
+                <TextView
+                    android:layout_marginTop="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delima"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Jika kamu mengonsumsi buah berbiji ini, kamu akan mendapatkan manfaat untuk kesehatan tubuh. Menjaga kesehatan jantung, mencegah kanker prostat, mencegah anemia, membantu penyembuhan luka, dan memberi efek positif bagi kecantikan kulit."
                     android:textSize="6pt" />
 
                 <LinearLayout
@@ -102,41 +121,9 @@
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleX="1.5"
-                    android:src="@drawable/brokoli" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Brokoli"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Brokoli merupakan salah satu sayuran hijau dari keluarga tanaman kubis. Brokoli berasal dari Italia dan dikenal sejak abad ke-enam. Hingga saat ini, brokoli terkenal sebagai sumber makanan yang paling sehat karena mengandung berbagai macam nutrisi
-            "
-                    android:textSize="6pt" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="2dp"
-                    android:layout_marginTop="8dp"
-                    android:background="@color/greyPudar">
-
-                </LinearLayout>
-            </LinearLayout>
 
         </LinearLayout>
+
     </ScrollView>
 
 </RelativeLayout>

@@ -2,9 +2,105 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
-    <ImageView
-        android:id="@+id/imageHeader"
-        android:scaleType="centerCrop"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        <ImageView
+            android:id="@+id/imageHeader"
+            android:scaleType="centerCrop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_indicator"
+            />
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:padding="12dp"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/text1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LAPAR?"
+                    android:textSize="28sp"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="TAPI INGIN"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/text1"
+                    android:textSize="12sp"
+                    />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="MAKAN SEHAT?"
+                    android:textStyle="bold"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:layout_below="@id/text2"
+                    />
+
+                <TextView
+                    android:layout_width="2dp"
+                    android:layout_height="80dp"
+                    android:background="@color/white"
+                    android:layout_toRightOf="@id/text3"
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/txtGaris"
+                    android:layout_marginTop="10dp"
+                    />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/text4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SALAD BUAH BU IYEM"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/txtGaris"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/text5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CUMA Rp 10.000"
+                    android:textSize="16sp"
+                    android:layout_below="@id/text4"
+                    android:layout_toRightOf="@id/txtGaris"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="@color/white"
+                    />
+
+                <Button
+                    android:id="@+id/btn_pesan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:text="Klik Disini"
+                    android:layout_below="@id/text5"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/btn_daftar"
+                    android:textColor="@color/white"
+                    android:layout_centerHorizontal="true"
+                    />
+
+        </RelativeLayout>
+
 </FrameLayout>

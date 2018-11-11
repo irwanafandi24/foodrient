@@ -3,6 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.miafandi.foody.Map.MapFragment">
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -10,13 +17,109 @@
 
         <SearchView
             android:id="@+id/searchView"
-            android:layout_width="350dp"
+            android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:queryHint="apa yang anda cari"
+            android:queryHint="Search by disease..."
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"/>
 
-    </RelativeLayout>
+        <ImageView
+            android:id="@+id/pin1"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/point1"
+            android:layout_below="@id/searchView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="70dp"/>
 
+        <ImageView
+            android:id="@+id/dtp1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/dtpoint1"
+            android:layout_below="@id/searchView"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="-20dp"/>
+
+        <ImageView
+            android:id="@+id/pin2"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/point1"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/pin1"/>
+
+        <ImageView
+            android:id="@+id/dtp2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/dtp2"
+            android:layout_marginTop="-10dp"
+            android:layout_marginLeft="35dp"
+            android:layout_below="@id/pin1"/>
+
+        <ImageView
+            android:id="@+id/pin3"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/point1"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"/>
+
+
+        <ImageView
+            android:id="@+id/dtp3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/dtp3"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="183dp"
+            android:layout_below="@id/pin1"/>
+
+
+
+        <ImageView
+            android:id="@+id/pin4"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/point1"
+            android:layout_marginTop="190dp"
+            android:layout_marginLeft="330dp"
+            android:layout_below="@+id/pin2"
+            />
+
+        <ImageView
+            android:id="@+id/dtp4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/dtpoint1"
+            android:layout_marginTop="105dp"
+            android:layout_marginLeft="230dp"
+            android:layout_below="@+id/pin2"
+            />
+
+        <ImageView
+            android:id="@+id/pin5"
+            android:layout_width="20dp"
+            android:layout_height="25dp"
+            android:src="@drawable/point1"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_below="@+id/pin4"
+            />
+
+        <ImageView
+            android:id="@+id/dtp5"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/dtp3"
+            android:layout_marginTop="153dp"
+            android:layout_marginLeft="115dp"
+            android:layout_below="@+id/pin2"
+            />
+
+    </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
 </FrameLayout>

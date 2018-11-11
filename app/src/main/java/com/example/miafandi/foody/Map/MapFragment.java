@@ -14,6 +14,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.miafandi.foody.R;
@@ -34,6 +36,8 @@ public class MapFragment extends Fragment  {
 //    SupportMapFragment mapFragment;
 //    GoogleMap mMap;
 //    GoogleApiClient googleApiClient;
+    ImageView im1, im2,im3,im4,im5,imd1,imd2,imd3,imd4,imd5;
+    SearchView searchV;
 
     public MapFragment() {
         // Required empty public constructor
@@ -49,64 +53,89 @@ public class MapFragment extends Fragment  {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final View rootView = inflater.inflate(R.layout.fragment_map, container, false);
+        im1 = (ImageView) rootView.findViewById(R.id.pin1);
+        im2 = (ImageView) rootView.findViewById(R.id.pin2);
+        im3 = (ImageView) rootView.findViewById(R.id.pin3);
+        im4 = (ImageView) rootView.findViewById(R.id.pin4);
+        im5 = (ImageView) rootView.findViewById(R.id.pin5);
+        imd1 = (ImageView) rootView.findViewById(R.id.dtp1);
+        imd2 = (ImageView) rootView.findViewById(R.id.dtp2);
+        imd3 = (ImageView) rootView.findViewById(R.id.dtp3);
+        imd4 = (ImageView) rootView.findViewById(R.id.dtp4);
+        imd5 = (ImageView) rootView.findViewById(R.id.dtp5);
+        searchV = (SearchView) rootView.findViewById(R.id.searchView);
 
-//        mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-//        if (mapFragment == null) {
-//            FragmentManager fm = getFragmentManager();
-//            FragmentTransaction ft = fm.beginTransaction();
-//            mapFragment = SupportMapFragment.newInstance();
-//            ft.replace(R.id.map, mapFragment).commit();
-//        }
-//        mapFragment.getMapAsync(this);
+        imd1.setVisibility(View.INVISIBLE);
+        imd2.setVisibility(View.INVISIBLE);
+        imd3.setVisibility(View.INVISIBLE);
+        imd4.setVisibility(View.INVISIBLE);
+        imd5.setVisibility(View.INVISIBLE);
+
+        im1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imd1.setVisibility(View.VISIBLE);
+                imd2.setVisibility(View.INVISIBLE);
+                imd3.setVisibility(View.INVISIBLE);
+                imd4.setVisibility(View.INVISIBLE);
+                imd5.setVisibility(View.INVISIBLE);
+            }
+        });
+        im2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imd1.setVisibility(View.INVISIBLE);
+                imd2.setVisibility(View.VISIBLE);
+                imd3.setVisibility(View.INVISIBLE);
+                imd4.setVisibility(View.INVISIBLE);
+                imd5.setVisibility(View.INVISIBLE);
+            }
+        });
+        im3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imd1.setVisibility(View.INVISIBLE);
+                imd2.setVisibility(View.INVISIBLE);
+                imd3.setVisibility(View.VISIBLE);
+                imd4.setVisibility(View.INVISIBLE);
+                imd5.setVisibility(View.INVISIBLE);
+            }
+        });
+        im4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imd1.setVisibility(View.INVISIBLE);
+                imd2.setVisibility(View.INVISIBLE);
+                imd3.setVisibility(View.INVISIBLE);
+                imd4.setVisibility(View.VISIBLE);
+                imd5.setVisibility(View.INVISIBLE);
+            }
+        });
+        im5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imd1.setVisibility(View.INVISIBLE);
+                imd2.setVisibility(View.INVISIBLE);
+                imd3.setVisibility(View.INVISIBLE);
+                imd4.setVisibility(View.INVISIBLE);
+                imd5.setVisibility(View.VISIBLE);
+            }
+        });
+        searchV.setOnSearchClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imd1.setVisibility(View.INVISIBLE);
+                imd2.setVisibility(View.INVISIBLE);
+                imd3.setVisibility(View.INVISIBLE);
+                imd4.setVisibility(View.INVISIBLE);
+                imd5.setVisibility(View.INVISIBLE);
+
+            }
+        });
+
+//
         return rootView;
     }
 
-//    @Override
-//    public void onMapReady(GoogleMap googleMap) {
-//        mMap = googleMap;
-//        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            return;
-//        }
-//        mMap.setMyLocationEnabled(true);
-//        buildClient();
-////        LatLng latLng = new LatLng(22.5,88.7);
-////        MarkerOptions markerOptions = new MarkerOptions();
-////        markerOptions.position(latLng);
-////        markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
-////        markerOptions.title("Current Position");
-////        markerOptions.snippet("My Position");
-////        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
-////        mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-////        mMap.addMarker(markerOptions);
-//    }
-//
-//    private void buildClient() {
-//        googleApiClient = new GoogleApiClient.Builder(getActivity().getApplicationContext())
-//                .addConnectionCallbacks(this)
-//                .addApi(LocationServices.API)
-//                .build();
-//        googleApiClient.connect();
-//    }
-//
-//    @Override
-//    public void onConnected(@Nullable Bundle bundle) {
-//        Toast.makeText(getActivity(), "Map Connected!", Toast.LENGTH_SHORT).show();
-//        LocationRequest lr = new LocationRequest();
-//        lr.setInterval(1000);
-//        lr.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-//        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            return;
-//        }
-//        LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, lr, this);
-//    }
-//
-//    @Override
-//    public void onConnectionSuspended(int i) {
-//
-//    }
-//
-//    @Override
-//    public void onLocationChanged(Location location) {
-//      //  Toast.makeText(getActivity(),"Location Changing",Toast.LENGTH_SHORT).show();
-//    }
+
 }

@@ -13,9 +13,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_foodrient"
+        android:icon="@drawable/logogw"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_foodrient"
+        android:roundIcon="@drawable/logogw"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".SplashScreen">
@@ -59,18 +59,18 @@
         <activity
             android:name=".Home.detailFoodItem"
             android:label="Pesan"
-            android:theme="@style/AppThemeDefault"
-            />
+            android:theme="@style/AppThemeDefault" />
         <activity
             android:name=".Home.FoodRating"
             android:label="Rating Masakan"
-            android:theme="@style/AppThemeDefault"
-            />
+            android:theme="@style/AppThemeDefault" />
         <activity android:name=".Profil.EditProfileActivity" />
         <activity android:name=".TransaksiActivity" />
         <activity android:name=".MulaiJualMasakActivity" />
         <activity android:name=".InputMasakanActivity" />
-        <activity android:name=".Resep.DetailResepActivity"></activity>
+        <activity android:name=".Bahan.DetailResepActivity" />
+        <activity android:name=".RekeningActivity" />
+        <activity android:name=".PanduanActivity"></activity>
     </application>
 
 </manifest>

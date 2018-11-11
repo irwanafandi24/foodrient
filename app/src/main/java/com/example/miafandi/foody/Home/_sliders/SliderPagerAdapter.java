@@ -25,7 +25,9 @@ public class SliderPagerAdapter extends FragmentStatePagerAdapter {
     @Override
     public Fragment getItem(int position) {
         int index = position % mFrags.size();
-        return FragmentSlider.newInstance(mFrags.get(index).getArguments().getString("params"));
+        return FragmentSlider.newInstance(mFrags.get(index).getArguments().getString("params"),
+                mFrags.get(index).getArguments().getString("nama"),
+                mFrags.get(index).getArguments().getString("harga"));
     }
 
     @Override

@@ -91,6 +91,9 @@ public class HomeFragment extends Fragment {
         makananList.add(new Makanan("SALAD SAYUR SEGAR","#Jantung #Darah Rendah #Liver",15000,4,R.drawable.salad));
         makananList.add(new Makanan("KACANG HIJAU ALMON ","#Darah Tinggi #Kolesterol #Liver ",14000,3,R.drawable.bubur));
         makananList.add(new Makanan("TAHU TEMPE NABATI","#Kolesterol rendah #Minyak Nabati",12000,3,R.drawable.grid1));
+        makananList.add(new Makanan("SALAD SAYUR SEGAR","#Jantung #Darah Rendah #Liver",15000,4,R.drawable.salad));
+        makananList.add(new Makanan("KACANG HIJAU ALMON ","#Darah Tinggi #Kolesterol #Liver ",14000,3,R.drawable.bubur));
+        makananList.add(new Makanan("TAHU TEMPE NABATI","#Kolesterol rendah #Minyak Nabati",12000,3,R.drawable.grid1));
 
         reLayoutManager = new LinearLayoutManager(rootView.getContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(reLayoutManager);
@@ -103,7 +106,7 @@ public class HomeFragment extends Fragment {
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 if(Math.abs(verticalOffset) > 180){
                     ExpandedActionBar = false;
-                    CoolToolbar.setTitle("Foodrient");
+                    CoolToolbar.setTitle("Nutrifood");
                     //CoolToolbar.setContentScrimColor(Color.parseColor("#ffffff"));
                 }else{
                     ExpandedActionBar = true;
@@ -169,10 +172,10 @@ public class HomeFragment extends Fragment {
     private void setupSlider() {
         sliderView.setDurationScroll(800);
         List<Fragment> fragments = new ArrayList<>();
-        fragments.add(FragmentSlider.newInstance("https://sehatjajanan.files.wordpress.com/2014/11/resep-masakan-sehat-5.jpg"));
-        fragments.add(FragmentSlider.newInstance("http://3.bp.blogspot.com/-MvTzW-vJalc/VPqcC_mV23I/AAAAAAAACug/JJZ2qSAOPMM/s1600/Resep%2BMasakan%2BSehat%2BSalad%2BSayur.jpg"));
-        fragments.add(FragmentSlider.newInstance("https://cdn1-a.production.liputan6.static6.com/medias/949669/big/021372800_1438999989-4573116519_9979df02cb_b.jpg"));
-        fragments.add(FragmentSlider.newInstance("https://cdns.klimg.com/vemale.com/headline/650x325/2014/02/resep-sehat-lumpia-sayur-segar-tanpa-goreng.jpg"));
+        fragments.add(FragmentSlider.newInstance("https://sehatjajanan.files.wordpress.com/2014/11/resep-masakan-sehat-5.jpg","SALAD BUAH BU IYEM","10000"));
+        fragments.add(FragmentSlider.newInstance("http://3.bp.blogspot.com/-MvTzW-vJalc/VPqcC_mV23I/AAAAAAAACug/JJZ2qSAOPMM/s1600/Resep%2BMasakan%2BSehat%2BSalad%2BSayur.jpg","Salad Sayur Segar","15000"));
+        fragments.add(FragmentSlider.newInstance("https://cdn1-a.production.liputan6.static6.com/medias/949669/big/021372800_1438999989-4573116519_9979df02cb_b.jpg","Sawi Segar","10000"));
+        fragments.add(FragmentSlider.newInstance("https://cdns.klimg.com/vemale.com/headline/650x325/2014/02/resep-sehat-lumpia-sayur-segar-tanpa-goreng.jpg","Lumpia Organik","12000"));
 //        fragments.add(FragmentSlider.newInstance(R.drawable.borderbackground));
 
         mAdapterSlider = new SliderPagerAdapter(getFragmentManager(), fragments);

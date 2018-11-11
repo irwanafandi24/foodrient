@@ -8,6 +8,6 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Masakan Hari ini" />
+        android:text="Jualan mu saat ini : \nBelum ada maasakan" />
 
 </FrameLayout>

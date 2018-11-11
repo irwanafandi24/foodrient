@@ -3,10 +3,8 @@ package com.example.miafandi.foody.Adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 
-import com.example.miafandi.foody.Resep.InfoBahan;
-import com.example.miafandi.foody.Resep.InfoBuah;
-import com.example.miafandi.foody.Transaksi.FragmentMasakanHari;
-import com.example.miafandi.foody.Transaksi.VotingHariFragment;
+import com.example.miafandi.foody.Bahan.InfoBahan;
+import com.example.miafandi.foody.Bahan.InfoBuah;
 
 /**
  * Created by user on 09/02/2018.

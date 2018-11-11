@@ -1,10 +1,9 @@
 package com.example.miafandi.foody;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,15 +15,18 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx;
 import com.example.miafandi.foody.Utils.BottomNavigationViewHelper;
 import com.example.miafandi.foody.Home.HomeFragment;
-import com.example.miafandi.foody.Resep.ResepFragment;
+import com.example.miafandi.foody.Bahan.ResepFragment;
 import com.example.miafandi.foody.Map.MapFragment;
 import com.example.miafandi.foody.Profil.ProfileFragment;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
     private static final String TAG = "HomeActivity";
+    private FirebaseAuth firebaseAuth;
     RadioButton rb1,rb2,rb3;
     Button btnSurvey;
     int checkedRadioButton = 0;
@@ -58,39 +60,18 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             return "Option salah";
     }
 
-//    public BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-//
-//        @Override
-//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//
-//            FragmentManager fragmentManager = getSupportFragmentManager();
-//            FragmentTransaction transaction = fragmentManager.beginTransaction();
-//
-//            switch (item.getItemId()) {
-//                case R.id.btmNavHome:
-//                    transaction.replace(R.id.content, new HomeFragment()).commit();
-//                    return true;
-//                case R.id.btmNavMap:
-//                    transaction.replace(R.id.content, new MapFragment()).commit();
-//                    return true;
-//                case R.id.btmNavResep:
-//                    transaction.replace(R.id.content, new ResepFragment()).commit();
-//                    return true;
-//                case R.id.btmNavProfile:
-//                    transaction.replace(R.id.content, new ProfileFragment()).commit();
-//                    return true;
-//            }
-//            return false;
-//        }
-//
-//    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() == null){
+            finish();
+            startActivity(new Intent(this,LoginActivity.class));
+        }
 
+        FirebaseUser user = firebaseAuth.getCurrentUser();
+        Toast.makeText(MainActivity.this,"Selamat Datang "+user.getEmail(),Toast.LENGTH_LONG).show();
         //dialog
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(MainActivity.this);
         View mView = getLayoutInflater().inflate(R.layout.activity_dialog_survey, null);

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1043310273726",
+    "firebase_url": "https://foodrient.firebaseio.com",
+    "project_id": "foodrient",
+    "storage_bucket": "foodrient.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1043310273726:android:9f270615b774cd08",
+        "android_client_info": {
+          "package_name": "com.example.miafandi.foody"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1043310273726-skkno6cccbbsnpooflb31csr7e7tbi6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBkMoSXig2jujxMdUdV3fIWnvs8h5RNSAI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

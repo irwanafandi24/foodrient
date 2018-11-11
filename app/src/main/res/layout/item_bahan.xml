@@ -2,23 +2,26 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="16dp"
+    android:layout_marginTop="12dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginBottom="15dp"
+    android:layout_marginRight="10dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="8dp"
         >
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp"
+            android:padding="9dp"
             >
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="50dp"
+                android:layout_width="55dp"
                 android:layout_height="50dp"
                 android:src="@drawable/brokoli"
                 android:layout_alignParentLeft="true"
@@ -33,8 +36,6 @@
                 android:textStyle="bold"
                 android:textAlignment="center"
                 android:textSize="12pt"
-                android:layout_marginTop="6dp"
-
                 />
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -68,6 +69,7 @@
                     />
 
                 <TextView
+                    android:id="@+id/txtPenyakitBahan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Osteoporosis, Penguatan Tulang"

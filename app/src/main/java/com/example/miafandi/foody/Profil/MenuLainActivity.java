@@ -8,18 +8,22 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.miafandi.foody.LoginActivity;
 import com.example.miafandi.foody.MainActivity;
 import com.example.miafandi.foody.R;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MenuLainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView txtBantuan, txtInformasi, txtAbout, txtHubungi, txtLogout;
     private ImageButton  btnBack;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_lain);
+        firebaseAuth = FirebaseAuth.getInstance();
 
         Toolbar tb= (Toolbar) findViewById(R.id.toolbarMenuLain);
         tb.setNavigationOnClickListener(new View.OnClickListener() {
@@ -55,6 +59,10 @@ public class MenuLainActivity extends AppCompatActivity implements View.OnClickL
             i.setClass(this.getApplicationContext(), MainActivity.class);
         }else if(v==txtInformasi){
             i.setClass(this.getApplicationContext(), MainActivity.class);
+        }else if(v== txtLogout){
+            firebaseAuth.signOut();
+            finish();
+            i.setClass(this.getApplicationContext(), LoginActivity.class);
         }else{
 
         }

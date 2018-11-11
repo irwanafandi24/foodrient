@@ -3,8 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.miafandi.foody.Resep.ResepFragment">
+    tools:context="com.example.miafandi.foody.Bahan.ResepFragment">
 
+    <android.support.design.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <android.support.design.widget.TabLayout
         android:id="@+id/tabInfoBahan"
         android:layout_width="match_parent"
@@ -23,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tabInfoBahan"
         android:animationCache="true"
-        android:background="@color/white"
+        android:background="@color/greyPudar"
         android:defaultFocusHighlightEnabled="true"
         android:filterTouchesWhenObscured="true"
         android:padding="8dp" />
@@ -51,5 +62,6 @@
             android:queryHint="apa yang anda cari" />
 
     </RelativeLayout>
-
+</RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>

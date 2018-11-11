@@ -1,4 +1,4 @@
-package com.example.miafandi.foody.Resep;
+package com.example.miafandi.foody.Bahan;
 
 import android.content.Context;
 import android.content.Intent;

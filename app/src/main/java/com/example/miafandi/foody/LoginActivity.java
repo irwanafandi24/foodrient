@@ -2,9 +2,11 @@ package com.example.miafandi.foody;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +23,10 @@ import com.example.miafandi.foody.AppConfig.DatabaseConfig;
 import com.example.miafandi.foody.AppConfig.PreferenceIntro;
 import com.example.miafandi.foody.AppConfig.RequestHandler;
 import com.example.miafandi.foody.AppConfig.SessionUser;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -35,11 +41,19 @@ public class LoginActivity extends AppCompatActivity {
     private StringRequest stringRequest;
     private SessionUser sessionUser;
     private ProgressDialog progressDialog;
+    private EditText editTextUsername, editTextPassword;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() != null){
+            finish();
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        }
         preferenceIntro = new PreferenceIntro(LoginActivity.this);
         preferenceIntro.checkProceed();
 
@@ -56,11 +70,10 @@ public class LoginActivity extends AppCompatActivity {
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(LoginActivity.this);
                 View mView = getLayoutInflater().inflate(R.layout.activity_dialog_login, null);
 
-                final EditText user = (EditText) mView.findViewById(R.id.username);
-                final EditText passwd = (EditText) mView.findViewById(R.id.password);
+                editTextUsername = (EditText) mView.findViewById(R.id.username);
+                editTextPassword = (EditText) mView.findViewById(R.id.password);
                 Button btnMasuk = (Button) mView.findViewById(R.id.btnMasuk);
                 TextView lupaSandi = (TextView) mView.findViewById(R.id.lupaKataSandi);
-                TextView cancleBtn = (TextView) mView.findViewById(R.id.cancle);
 
                 mBuilder.setView(mView);
                 final AlertDialog dialog = mBuilder.create();
@@ -69,11 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                 btnMasuk.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if(!user.getText().toString().isEmpty() && !passwd.getText().toString().isEmpty()){
-                            Login(user.getText().toString(),passwd.getText().toString());
-                        }else{
-                            Toast.makeText(LoginActivity.this, "Please fill all field", Toast.LENGTH_SHORT).show();
-                        }
+                    userLogin();
                     }
                 });
 
@@ -84,13 +93,6 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-
-                cancleBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.cancel();
-                    }
-                });
             }
         });
 
@@ -99,6 +101,34 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this,RegisterActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+    private void userLogin(){
+        String email = editTextUsername.getText().toString().trim();
+        String password = editTextPassword.getText().toString().trim();
+        if(TextUtils.isEmpty(email)){
+            Toast.makeText(this, "Please fill email", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(TextUtils.isEmpty(password)){
+            Toast.makeText(this, "Please fill password", Toast.LENGTH_LONG).show();
+            return;
+        }
+        progressDialog.setMessage("Register User....");
+        progressDialog.show();
+
+        firebaseAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                progressDialog.dismiss();
+                if(task.isSuccessful()){
+                    finish();
+                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                }else{
+                    Toast.makeText(LoginActivity.this, "Username or password maybe wrong", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
