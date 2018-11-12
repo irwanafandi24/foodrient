@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -54,15 +53,13 @@ public class detailFoodItem extends AppCompatActivity {
         detailFoodNama.setText(nama);
 
         if(gambar ==0 ){
-            Log.e("masuk",gambar1);
             Glide.with(this)
                     .load(gambar1)
-                    .placeholder(R.drawable.iklan)
+                    .placeholder(R.drawable.salad)
                     .into(imageDetailFood);
         }else{
             imageDetailFood.setImageResource(gambar);
         }
-
 
         add = (TextView) findViewById(R.id.increment);
         count = (TextView) findViewById(R.id.count);

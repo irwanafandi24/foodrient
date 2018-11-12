@@ -36,4 +36,15 @@ Bumbu halus: \n
 Secukupnya garam gula dan penyedap(jika suka) \n
 Secukupnya minyak goreng \n
 2 gelas air \n</string>
+
+        <string-array name="penyakit">
+            <item>Jantung</item>
+            <item>Darah Rendah</item>
+            <item>Darah Tinggi</item>
+            <item>Darah Liver</item>
+            <item>Kolesterol</item>
+            <item>Kencing Manis</item>
+            <item>Magh</item>
+        </string-array>
+
 </resources>

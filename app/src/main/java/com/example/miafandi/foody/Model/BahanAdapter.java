@@ -81,37 +81,14 @@ public class BahanAdapter extends RecyclerView.Adapter<BahanAdapter.MyViewHolder
             AlertDialog.Builder mBuilder = new AlertDialog.Builder(context);
             View mView = LayoutInflater.from(context).inflate(R.layout.activity_dialog_infobahan, null);
 
-            EditText editTextUsername = (EditText) mView.findViewById(R.id.username);
-            EditText editTextPassword = (EditText) mView.findViewById(R.id.password);
-            Button btnMasuk = (Button) mView.findViewById(R.id.btnMasuk);
-            TextView lupaSandi = (TextView) mView.findViewById(R.id.lupaKataSandi);
-            TextView cancleBtn = (TextView) mView.findViewById(R.id.cancle);
+//            Button btnMasuk = (Button) mView.findViewById(R.id.btnMasuk);
+//            TextView lupaSandi = (TextView) mView.findViewById(R.id.lupaKataSandi);
+//            TextView cancleBtn = (TextView) mView.findViewById(R.id.cancle);
 
             mBuilder.setView(mView);
             final AlertDialog dialog = mBuilder.create();
             dialog.show();
 
-            btnMasuk.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-//                    userLogin();
-                }
-            });
-
-            lupaSandi.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-//                    Intent intent = new Intent(LoginActivity.this, ForgetPasswordActivity.class);
-//                    startActivity(intent);
-                }
-            });
-
-            cancleBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog.cancel();
-                }
-            });
         }
     }
 }

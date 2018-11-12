@@ -24,10 +24,12 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.MyViewHo
 
     private Context context;
     private List<Makanan> list;
+    private String filterPenyakit;
 
-    public MakananAdapter(Context context, List<Makanan> list) {
+    public MakananAdapter(Context context, List<Makanan> list,String filterP) {
         this.context = context;
         this.list = list;
+        this.filterPenyakit = filterP;
     }
 
     @Override
@@ -40,7 +42,13 @@ public class MakananAdapter extends RecyclerView.Adapter<MakananAdapter.MyViewHo
     public void onBindViewHolder(MakananAdapter.MyViewHolder holder, int position) {
         Makanan makan = list.get(position);
         holder.txtNamaMakanan.setText(makan.getNama());
-        holder.txtPenyakit.setText(makan.getPenyakit());
+        String tempPenyakit ="";
+        //filter belum di isi dari spiner
+        for (int i = 0; i < makan.getPenyakitSize(); i++) {
+            //ini jika filter tidak ada
+            tempPenyakit = tempPenyakit + "#"+makan.getPenyakit(i)+" ";
+        }
+        holder.txtPenyakit.setText(tempPenyakit);
         holder.txtHargaMakanan.setText(makan.getHarga());
         holder.ratingBar.setRating(makan.getBintang());
         holder.makananitem.setImageResource(makan.getDrawable());
